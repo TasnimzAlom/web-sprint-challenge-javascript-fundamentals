@@ -25,10 +25,15 @@ myFunction();
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
 /* Create a function called `summation` that accepts a parameter and uses a counter to return the summation of that number. For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(number) {
+  let num = 0;
+  for (let i = 1; i <= number; i++){
+    num += i;
   }
+  return number;
+}
+// console.log(summation(4));
+  
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -50,35 +55,57 @@ const zooAnimals = [
   /* 🦁🦁🦁 Request 1: .forEach() 🦁🦁🦁
   The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
   */
-  function animalNames(data){
-    
+  function animalNames(data) { 
 
   }
+    const displayNames = [];
+    zooAnimals.forEach(element => displayNames.push("Name: " + element.animal_name +  element.scientific_name))
+      
+      // console.log(displayNames);
+
+
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
   */
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+function lowerCaseNames(/*Your Code Here*/) { 
+  function lowCaseAnimalNames() {
+    const lowerCaseNames = zooAnimals.map(item => item.animal_name.toLowerCase())
+    // console.log(lowerCaseNames);
   }
-  
-  
+
+   }
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
   */
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
-  
+
+function lowPopulationAnimals(/*Your Code Here*/){
+  /*Your Code Here*/
+function lowPopulationAnimals(){
+ const lowPopulationAnimals = [];
+ zooAnimals.filter((animal))
+   if (animal.populuation < 5){
+     lowPopulationAnimals.push(animal.animal_name)
+   
+ }
+}
+
+// console.log(lowPopulationAnimals);
+
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
   */
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+function USApop(/*Your Code Here*/) {
   
+  function USApop() {
+    let populationTotal = 0;
+    let populationTotal = zooAnimals.reduce((accumulator, animals) => {
+      return accumulator += animals.population;
+    }, 0);
+  }
+  }
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
@@ -88,30 +115,47 @@ const zooAnimals = [
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
   function consume(/*Your Code Here */){
-    /*Your Code Here */
+   
+}
+  
+  function consume(a, b, cb){
+    return cb(a, b);
   }
- 
   
   /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
  // 🦁🦁🦁 Create a function named add that returns the sum of two numbers 🦁🦁🦁
+
   function add(/*Your Code Here */){
-    /*Your Code Here*/
-  }
+    
+}
+  function add(){
+    const add = (a, b) => {
+      return a+b;
+    };
+
+
+
 // 🦁🦁🦁 Create a function named multiply that returns the product of two numbers 🦁🦁🦁
   function multiply(/*Your Code Here */){
-   /*Your Code Here */
-  }
-
+   
+    }
+      function multiply(/*Your Code Here */){
+        const multiply = (a, b) => {
+          return a*b;
+        }
+        
  // 🦁🦁🦁 Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!" 🦁🦁🦁
   function greeting(/*Your Code Here */){
-   return /*Your Code Here */
-  }
+   return `Hello ${firstName} ${lastName}, nice to meet you!`;
+  };
+ 
   
+          
   // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
   // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-  // console.log(consume(2, 2, add)); // 4
-  // console.log(consume(10, 16, multiply)); // 160
-  // console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+  console.log(consume(2, 2, add)); // 4
+  console.log(consume(10, 16, multiply)); // 160
+  console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
   
   
 // 🦁💪 Stretch: If you haven't already, convert your array method callbacks into arrow functions 🦁💪
@@ -126,15 +170,21 @@ const zooAnimals = [
   Create a constructor function named CuboidMaker that accepts properties for length, width, and height which can be initialized as an object
 */
 function CuboidMaker(/*Your Code Here */){
-  /*Your Code Here */
+  
 }
-
+function CuboidMaker(attributes){
+  this.length = attributes.length;
+  this.width = attributes.width;
+  this.height = attributes.height;
+}
 
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴
   Create a method using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
   Formula for cuboid volume: length * width * height   */
 
-
+  CuboidMaker.prototype.volume = function() {
+    return this.length * this.width * this.height;
+    }
 
 
 
@@ -188,17 +238,18 @@ class CuboidMakerTwo{
     console.log('its working');
     return 'bar';
   }
-  export default{
-    foo,
-    summation,
-    animalNames,
-    lowerCaseNames,
-    lowPopulationAnimals,
-    USApop,
-    consume, 
-    add,
-    multiply,
-    greeting,
-    CuboidMaker,
-    CuboidMakerTwo
-  }
+   
+//   export default{
+//     foo,
+//     summation,
+//     animalNames,
+//     lowerCaseNames,
+//     lowPopulationAnimals,
+//     USApop,
+//     consume, 
+//     add,
+//     multiply,
+//     greeting,
+//     CuboidMaker,
+//     CuboidMakerTwo
+//    }
