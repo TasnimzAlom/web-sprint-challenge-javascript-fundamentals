@@ -17,6 +17,8 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
+// Nested Function can internally access the variable "internal" because it is in the local Scope, Whereas if it were nested outside of "myFunction"
+//it would be in the global scope.
 
 
 
